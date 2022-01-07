@@ -300,7 +300,10 @@ Pages that aren't part of the main project page
 
 ## Created with
 
+### Tech
 - <a href="https://nodejs.org/en/">Node.js</a>
+
+### Framework
 - <a href="https://expressjs.com/">Express.js</a>
 
 ### Functionality
