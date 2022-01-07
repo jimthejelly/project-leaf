@@ -95,17 +95,17 @@ Admin (Manager, Director, HR):
 
 <strong>Parameters:</strong>
 
-- employee_id
-- department
-- submit_time
-- reason
-- explanation
-- start_date
-- end_date
-- total_days
-- status
-- created_at
-- created_by
+- employee_id -> int
+- department -> text
+- submit_time -> timestamp
+- reason -> text
+- explanation -> text
+- start_date -> date
+- end_date -> date
+- total_days -> int
+- status -> text
+- created_at -> timestamp
+- created_by -> text
 
 <strong>Response:</strong>
 ```
@@ -167,15 +167,15 @@ Admin (Manager, Director, HR):
 
 <strong>Parameters:</strong>
 
-- name
-- password
-- email
-- phone
-- dob
-- position
-- pfp
-- created_at
-- created_by
+- name -> text
+- password -> text
+- email -> text
+- phone -> text
+- dob -> date
+- position -> text
+- pfp -> text
+- created_at -> timestamp
+- created_by -> timestamp
 
 <strong>Response:</strong>
 ```
@@ -212,7 +212,7 @@ Admin (Manager, Director, HR):
 
 <strong>Parameters:</strong>
 
-- status
+- status -> text
 
 <strong>Response:</strong>
 ```
@@ -247,7 +247,7 @@ Admin (Manager, Director, HR):
 
 <strong>Parameters:</strong>
 
-- status
+- status -> text
 
 <strong>Response:</strong>
 ```
@@ -299,6 +299,9 @@ Pages that aren't part of the main project page
 <img src="/public/images/error.png" width="400">
 
 ## Created with
+
+- <a href="https://nodejs.org/en/">Node.js</a>
+- <a href="https://expressjs.com/">Express.js</a>
 
 ### Functionality
 - HTML/<a href="https://ejs.co/">EJS</a>
