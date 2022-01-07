@@ -92,6 +92,8 @@ exports.employee_submit = (req, res, next) => {
     let pos = req.body.pos
     var imgPath = req.file.filename
 
+    let user = req.user
+
     var sql = `INSERT INTO employees
             (
                 name, password, email, phone, dob, position, pfp, created_at, created_by
@@ -101,16 +103,15 @@ exports.employee_submit = (req, res, next) => {
                 ?, ?, ?, ?, ?, ?, ?, ?, ?
             )`;
     
-    connection.query(sql, [name , password, email, phone, moment(dob).format('YYYY/MM/DD'), pos, imgPath, moment(Date.now()).format('YYYY-MM-DD HH:mm:ss'), "Jimin Lee"], function (err, data) {
+    connection.query(sql, [name , password, email, phone, moment(dob).format('YYYY/MM/DD'), pos, imgPath, moment(Date.now()).format('YYYY-MM-DD HH:mm:ss'), user.name], function (err, data) {
         if (err) {
             console.log(err)
         } else {
             // successfully inserted into db
             console.log('success: ' + data)
+            res.redirect("/employee?success=true")
         }
     });
-
-    res.redirect("/employee?success=true")
 }
 
 exports.leave_submit = (req, res, next) => {
@@ -133,7 +134,7 @@ exports.leave_submit = (req, res, next) => {
                 ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
             )`;
     
-    connection.query(sql, [user.id, dep, moment(Date.now()).format('YYYY-MM-DD HH:mm:ss'), reason, explanation, moment(start).format('YYYY/MM/DD'), moment(end).format('YYYY/MM/DD'), total, "pending", moment(Date.now()).format('YYYY-MM-DD HH:mm:ss'), "Jimin Lee"], function (err, data) {
+    connection.query(sql, [user.id, dep, moment(Date.now()).format('YYYY-MM-DD HH:mm:ss'), reason, explanation, moment(start).format('YYYY/MM/DD'), moment(end).format('YYYY/MM/DD'), total, "pending", moment(Date.now()).format('YYYY-MM-DD HH:mm:ss'), user.name], function (err, data) {
         if (err) {
             console.log(err)
         } else {
