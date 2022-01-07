@@ -49,7 +49,7 @@ exports.employee = (req, res, next) => {
 }
 
 exports.emp_form = (req, res, next) => {
-    res.render('../views/employee_sign')
+    res.render('../views/employee_sign', { user: req.user })
 }
 
 exports.leave = (req, res, next) => {
