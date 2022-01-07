@@ -29,7 +29,7 @@ A simple webpage to document employees and their leaves over the year. Made with
 
 <strong>Parameters:</strong> None
 
-<strong>Response:</strong> <img src="/public/images/login.png">
+<strong>Response:</strong> <img src="/public/images/login.png" width="400">
 
 ### Logout
 
@@ -49,17 +49,17 @@ A simple webpage to document employees and their leaves over the year. Made with
 
 No login:
 - can view dashboard only
-<img src="/public/images/dashboard-nologin.png">
+<img src="/public/images/dashboard-nologin.png" width="400">
 
 Staff:
 - dashboard says welcome with logged in name
 - can access dashboard and leave
-<img src="/public/images/dashboard-staff.png">
+<img src="/public/images/dashboard-staff.png" width="400">
 
 Admin (Manager, Director, HR):
 - dashboard says welcome with logged in name
 - can access every page (dashboard, leave, employee and approval)
-<img src="/public/images/dashboard-admin.png">
+<img src="/public/images/dashboard-admin.png" width="400">
 
 ## Leave
 
@@ -72,14 +72,14 @@ Admin (Manager, Director, HR):
 <strong>Parameters:</strong> None
 
 <strong>Response:</strong>
-<img src="/public/images/leavelist.png">
+<img src="/public/images/leavelist.png" width="400">
 
 [GET] /leave?success=true
 
 <strong>Parameters:</strong> None
 
 <strong>Response:</strong>
-<img src="/public/images/leaveform-success.png">
+<img src="/public/images/leaveform-success.png" width="400">
 
 ### Leave Form
 
@@ -88,7 +88,7 @@ Admin (Manager, Director, HR):
 <strong>Parameters:</strong> None
 
 <strong>Response:</strong>
-<img src="/public/images/leaveform.png">
+<img src="/public/images/leaveform.png" width="400">
 
 [POST] /leave-submit
 
@@ -144,14 +144,14 @@ Admin (Manager, Director, HR):
 <strong>Parameters:</strong> None
 
 <strong>Response:</strong>
-<img src="/public/images/emplist.png">
+<img src="/public/images/emplist.png" width="400">
 
 [GET] /employee?success=true
 
 <strong>Parameters:</strong> None
 
 <strong>Response:</strong>
-<img src="/public/images/empform-success.png">
+<img src="/public/images/empform-success.png" width="400">
 
 ### Employee Form
 
@@ -160,7 +160,7 @@ Admin (Manager, Director, HR):
 <strong>Parameters:</strong> None
 
 <strong>Response:</strong>
-<img src="/public/images/empform.png">
+<img src="/public/images/empform.png" width="400">
 
 [POST] /employee-submit
 
@@ -203,7 +203,7 @@ Admin (Manager, Director, HR):
 <strong>Parameters:</strong> None
 
 <strong>Response:</strong>
-<img src="/public/images/approval.png">
+<img src="/public/images/approval.png" width="400">
 
 ### Approve
 
@@ -286,7 +286,7 @@ Pages that aren't part of the main project page
 <strong>Parameters:</strong> None
 
 <strong>Response:</strong>
-<img src="/public/images/noauth.png">
+<img src="/public/images/noauth.png" width="400">
 
 ### Error page
 
@@ -295,7 +295,7 @@ Pages that aren't part of the main project page
 <strong>Parameters:</strong> None
 
 <strong>Response:</strong>
-<img src="/public/images/error.png">
+<img src="/public/images/error.png" width="400">
 
 ## Created with
 
