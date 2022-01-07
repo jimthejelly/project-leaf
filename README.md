@@ -78,7 +78,7 @@ Admin (Manager, Director, HR):
 <strong>Parameters:</strong> None
 
 <strong>Response:</strong>
-<img src="/public/images/leaveform-success.png>
+<img src="/public/images/leaveform-success.png">
 
 ### Leave Form
 
@@ -89,7 +89,7 @@ Admin (Manager, Director, HR):
 <strong>Response:</strong>
 <img src="/public/images/leaveform.png">
 
-[POST] /leave-form
+[POST] /leave-submit
 
 <strong>Parameters:</strong>
 
@@ -138,24 +138,112 @@ Admin (Manager, Director, HR):
 
 ### Employee List
 
+[GET] /employee
+
+<strong>Parameters:</strong> None
+
+<strong>Response:</strong>
+<img src="/public/images/emplist.png">
+
+[GET] /employee?success=true
+
+<strong>Parameters:</strong> None
+
+<strong>Response:</strong>
+<img src="/public/images/empform-success.png">
+
 ### Employee Form
+
+[GET] /emp-form
+
+<strong>Parameters:</strong> None
+
+<strong>Response:</strong>
+<img src="/public/images/empform.png">
+
+[POST] /employee-submit
+
+<strong>Parameters:</strong>
+
+- name
+- password
+- email
+- phone
+- dob
+- position
+- pfp
+- created_at
+- created_by
+
+<strong>Response:</strong>
+```
+```
 
 ## Approval
 
 *Only users with positions of Manager, Director or HR can access this page*
 
+[GET] /approval
+
+<strong>Parameters:</strong> None
+
+<strong>Response:</strong>
+<img src="/public/images/approval.png">
+
 ### Approve
+
+[POST] /approve
+
+<strong>Parameters:</strong>
+
+- status
+
+<strong>Response:</strong>
+```
+```
 
 ### Decline
 
+[POST] /decline
+
+<strong>Parameters:</strong>
+
+- status
+
+<strong>Response:</strong>
+```
+```
+
 ## Other
+
+Pages that aren't part of the main project page
 
 ### Not Authorized page
 
+[GET] /notauthorized
+
+<strong>Parameters:</strong> None
+
+<strong>Response:</strong>
+<img src="/public/images/noauth.png">
+
 ### Error page
 
+[GET] /error or anything that isn't part of the main get functions
 
+<strong>Parameters:</strong> None
 
-## Not authorized page
+<strong>Response:</strong>
+<img src="/public/images/error.png">
 
-## Error page
+## Created with
+
+### Functionality
+- HTML/<a href="https://ejs.co/">EJS</a>
+- <a href="https://www.npmjs.com/">npm</a>
+- <a href="https://www.passportjs.org/">Passport.js</a>
+- <a href="sweetalert2.github.io">SweetAlert2</a>
+
+### Style
+- CSS
+- <a href="https://getbootstrap.com/">Bootstrap</a>
