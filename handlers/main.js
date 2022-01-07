@@ -53,7 +53,7 @@ exports.emp_form = (req, res, next) => {
 }
 
 exports.leave = (req, res, next) => {
-    connection.query('SELECT *, leaf.position FROM leaves AS leaf LEFT JOIN employees ON leaf.employee_id = employees.id;', function (err, rows, fields) {
+    connection.query('SELECT * FROM leaves AS leaf LEFT JOIN employees ON leaf.employee_id = employees.id;', function (err, rows, fields) {
         if (err) throw err
 
         console.log('User data: ', rows)
@@ -66,7 +66,7 @@ exports.leave_form = (req, res, next) => {
 }
 
 exports.approval = (req, res, next) => {
-    connection.query('SELECT *, leaf.position, leaf.id FROM leaves AS leaf LEFT JOIN employees ON leaf.employee_id = employees.id;', function (err, rows, fields) {
+    connection.query('SELECT *, leaf.id FROM leaves AS leaf LEFT JOIN employees ON leaf.employee_id = employees.id;', function (err, rows, fields) {
         if (err) throw err
 
         console.log('User data: ', rows)
@@ -126,14 +126,14 @@ exports.leave_submit = (req, res, next) => {
 
     var sql = `INSERT INTO leaves
             (
-                employee_id, position, department, submit_time, reason, explanation, start_date, end_date, total_days, status, created_at, created_by
+                employee_id, department, submit_time, reason, explanation, start_date, end_date, total_days, status, created_at, created_by
             )
             VALUES
             (
-                ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+                ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
             )`;
     
-    connection.query(sql, [user.id, user.position, dep, moment(Date.now()).format('YYYY-MM-DD HH:mm:ss'), reason, explanation, moment(start).format('YYYY/MM/DD'), moment(end).format('YYYY/MM/DD'), total, "pending", moment(Date.now()).format('YYYY-MM-DD HH:mm:ss'), "Jimin Lee"], function (err, data) {
+    connection.query(sql, [user.id, dep, moment(Date.now()).format('YYYY-MM-DD HH:mm:ss'), reason, explanation, moment(start).format('YYYY/MM/DD'), moment(end).format('YYYY/MM/DD'), total, "pending", moment(Date.now()).format('YYYY-MM-DD HH:mm:ss'), "Jimin Lee"], function (err, data) {
         if (err) {
             console.log(err)
         } else {
