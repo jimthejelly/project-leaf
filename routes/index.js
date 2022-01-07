@@ -3,6 +3,8 @@ const main = require('../handlers/main')
 
 const multer  = require('multer')
 
+const flash = require('req-flash')
+
 const passport = require('passport')
 var LocalStrategy   = require('passport-local').Strategy;
 

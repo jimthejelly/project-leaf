@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session')
 var passport = require('passport');
+var flash = require('req-flash');
 
 var indexRouter = require('./routes/index');
 
@@ -23,6 +24,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({ secret: "anything" }));
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.use(flash());
 
 // app.use(express.static("public"))
 

@@ -110,18 +110,19 @@ exports.employee_submit = (req, res, next) => {
         }
     });
 
-    res.redirect("/employee?success=true", { user: req.user })
+    res.redirect("/employee?success=true")
 }
 
 exports.leave_submit = (req, res, next) => {
     // let name = req.body.name
-    let pos = req.body.pos
     let dep = req.body.department
     let reason = req.body.reason
     let explanation = req.body.explanation
     let start = req.body.start_date
     let end = req.body.end_date
     let total = req.body.total
+
+    let user = req.user
 
     var sql = `INSERT INTO leaves
             (
@@ -132,16 +133,15 @@ exports.leave_submit = (req, res, next) => {
                 ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
             )`;
     
-    connection.query(sql, ["3", pos, dep, moment(Date.now()).format('YYYY-MM-DD HH:mm:ss'), reason, explanation, moment(start).format('YYYY/MM/DD'), moment(end).format('YYYY/MM/DD'), total, "pending", moment(Date.now()).format('YYYY-MM-DD HH:mm:ss'), "Jimin Lee"], function (err, data) {
+    connection.query(sql, [user.id, user.position, dep, moment(Date.now()).format('YYYY-MM-DD HH:mm:ss'), reason, explanation, moment(start).format('YYYY/MM/DD'), moment(end).format('YYYY/MM/DD'), total, "pending", moment(Date.now()).format('YYYY-MM-DD HH:mm:ss'), "Jimin Lee"], function (err, data) {
         if (err) {
             console.log(err)
         } else {
             // successfully inserted into db
             console.log('success: ' + data)
+            res.redirect("/leave?success=true")
         }
     });
-
-    res.redirect("/leave?success=true", { user: req.user })
 }
 
 exports.approve = (req, res, next) => {
@@ -152,7 +152,7 @@ exports.approve = (req, res, next) => {
         if (err) {
             console.log(err)
         } else {
-            res.redirect('approval', { user: req.user })
+            res.redirect('approval')
         }
     });
 }
@@ -165,7 +165,7 @@ exports.decline = (req, res, next) => {
         if (err) {
             console.log(err)
         } else {
-            res.redirect('approval', { user: req.user })
+            res.redirect('approval')
         }
     });
 }
