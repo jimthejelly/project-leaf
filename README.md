@@ -4,10 +4,11 @@ A simple webpage to document employees and their leaves over the year. Made with
 
 ## How to Use
 
-- npm install
+- `npm install`
 - Set up MySQL database (named leaf-db)
 - Load dummy database leaf-db.sql into created database
-- npm start to localhost:3000
+- `npm start` in terminal to launch pages
+- localhost:3000 to access pages
 
 ### Routes:
 
@@ -177,6 +178,20 @@ Admin (Manager, Director, HR):
 
 <strong>Response:</strong>
 ```
+{
+    id: 29,
+    name: 'Jom',
+    email: 'jimjom@gmail.com',
+    phone: '12345654234',
+    dob: 2022-01-06T17:00:00.000Z,
+    password: 'password',
+    position: 'Staff',
+    pfp: 'random.jpg',
+    created_at: 2022-01-07T08:17:35.000Z,
+    updated_at: null,
+    created_by: 'bloop',
+    updated_by: null
+}
 ```
 
 ## Approval
@@ -200,6 +215,29 @@ Admin (Manager, Director, HR):
 
 <strong>Response:</strong>
 ```
+{
+    id: 26,
+    department: 'IT',
+    submit_time: 2022-01-07T07:06:58.000Z,
+    reason: 'Sick',
+    explanation: 'Death is upon me, fellas',
+    start_date: 1901-12-11T16:52:48.000Z,
+    end_date: 1901-12-29T16:52:48.000Z,
+    total_days: 18,
+    created_at: 2022-01-07T07:06:58.000Z,
+    updated_at: 2022-01-07T15:20:15.000Z,
+    created_by: bloop,
+    updated_by: bloop,
+    employee_id: 2,
+    status: 'approved',
+    name: 'bloop',
+    email: 'bloop@gmail.com',
+    phone: '321543765',
+    dob: 2021-10-07T17:00:00.000Z,
+    password: 'password',
+    position: 'Manager',
+    pfp: 'https://media.moddb.com/images/members/5/4550/4549205/duck.jpg'
+}
 ```
 
 ### Decline
@@ -212,6 +250,29 @@ Admin (Manager, Director, HR):
 
 <strong>Response:</strong>
 ```
+{
+    id: 26,
+    department: 'IT',
+    submit_time: 2022-01-07T07:06:58.000Z,
+    reason: 'Sick',
+    explanation: 'Death is upon me, fellas',
+    start_date: 1901-12-11T16:52:48.000Z,
+    end_date: 1901-12-29T16:52:48.000Z,
+    total_days: 18,
+    created_at: 2022-01-07T07:06:58.000Z,
+    updated_at: 2022-01-07T15:21:27.000Z,
+    created_by: bloop,
+    updated_by: bloop,
+    employee_id: 2,
+    status: 'declined',
+    name: 'bloop',
+    email: 'bloop@gmail.com',
+    phone: '321543765',
+    dob: 2021-10-07T17:00:00.000Z,
+    password: 'password',
+    position: 'Manager',
+    pfp: 'https://media.moddb.com/images/members/5/4550/4549205/duck.jpg'
+}
 ```
 
 ## Other
