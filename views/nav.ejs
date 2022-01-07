@@ -27,23 +27,18 @@
             <ul class="nav navbar-nav">
                 <li><a href="/">Dashboard</a></li>
                 <li><a href="leave">Leave</a></li>
-                <li><a href="employee">Employee</a></li>
-                <li><a href="approval">Approval</a></li>
-                <!-- <% if(user) { %>
-                    <% user.position == "Manager" || user.position == "HR" %>
+                <% if(user && (user.position == "Manager" || user.position == "HR")) { %>
                     <li><a href="employee">Employee</a></li>
+                <% } %>
+                <% if(user && (user.position == "Manager" || user.position == "HR")) { %>
                     <li><a href="approval">Approval</a></li>
-                    <% } %>
-                <% } %> -->
+                <% } %>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <% if(!user) { %>
                 <li><a href="login">Log In</a></li>
                 <% } else { %>
                 <li><a href="logout">Log Out</a></li>
-                <!-- <form action="/logout" method="post">
-                    <button type="submit">Log Out</button>
-                </form> -->
                 <% } %>
             </ul>
         </div>
