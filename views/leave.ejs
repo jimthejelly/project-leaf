@@ -1,0 +1,62 @@
+<body>
+    <%- include("nav") %>
+
+    <div class="container">
+        <br>
+
+        <div>
+            <a href="leave-form"><button class="btn btn-primary">New Leave</button></a>
+        </div>
+
+        <br>
+
+        <div>
+            <table class="table table-striped">
+                <tr>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Department</th>
+                    <th>Date submitted</th>
+                    <th>Reason</th>
+                    <th>Explanation</th>
+                    <th>Start date</th>
+                    <th>End date</th>
+                    <th>Total days</th>
+                    <th>Status</th>
+                </tr>
+
+                <% leaves.forEach(function(leave){ %>
+                    <tr>
+                        <td style="text-transform: capitalize;"><%= leave.name %></td>
+                        <td><%= leave.position %></td>
+                        <td style="text-transform: capitalize;"><%= leave.department %></td>
+                        <td><%= moment(leave.submit_time).format('DD/MM/YYYY') %></td>
+                        <td><%= leave.reason %></td>
+                        <td style="text-transform: capitalize;"><%= leave.explanation %></td>
+                        <td><%= moment(leave.start_date).format('DD/MM/YYYY') %></td>
+                        <td><%= moment(leave.end_date).format('DD/MM/YYYY') %></td>
+                        <td><%= leave.total_days %></td>
+                        <td style="text-transform: capitalize;"><%= leave.status %></td>
+                    </tr>
+                <% }); %>
+            </table>
+        </div>
+    </div>
+</body>
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    var urlParams = new URLSearchParams(window.location.search);
+
+    if(urlParams.has('success') && urlParams.get('success')) {
+        new swal({
+        title: "Success",
+        text: "New leave created", 
+        icon: "success",
+        button: "Okay",
+        }).then(() => {
+            location.href = '/leave';
+
+        })
+    }
+</script>

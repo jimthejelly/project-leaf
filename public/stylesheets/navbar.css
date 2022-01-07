@@ -1,0 +1,22 @@
+body {
+    padding-top: 65px;
+}
+
+a {
+    color: #FFFFFF;
+    font-size: larger;
+}
+
+a:hover {
+    color: #3A506B;
+    background-color: #FFFFFF;
+}
+
+.navbar {
+    background-color: #3A506B;
+}
+
+#brand:hover {
+    color: #FFFFFF;
+    background-color: #3A506B;
+}

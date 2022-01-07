@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/stylesheets/navbar.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+    
+    <script src="sweetalert2.all.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/465fdb50d8.js" crossorigin="anonymous"></script>
+
+    <title>Project Leaf</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand active" id="brand"><i class="fas fa-leaf"></i> Project Leaf</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="/">Dashboard</a></li>
+                <li><a href="leave">Leave</a></li>
+                <li><a href="employee">Employee</a></li>
+                <li><a href="approval">Approval</a></li>
+                <!-- <% if(user) { %>
+                    <% user.position == "Manager" || user.position == "HR" %>
+                    <li><a href="employee">Employee</a></li>
+                    <li><a href="approval">Approval</a></li>
+                    <% } %>
+                <% } %> -->
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <% if(!user) { %>
+                <li><a href="login">Log In</a></li>
+                <% } else { %>
+                <li><a href="logout">Log Out</a></li>
+                <!-- <form action="/logout" method="post">
+                    <button type="submit">Log Out</button>
+                </form> -->
+                <% } %>
+            </ul>
+        </div>
+    </nav>
+</body>

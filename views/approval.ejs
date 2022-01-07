@@ -1,0 +1,53 @@
+<body>
+    <%- include("nav") %>
+
+    <div class="container">
+        <br>
+
+        <div>
+            <table class="table table-striped">
+                <tr>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Department</th>
+                    <th>Date submitted</th>
+                    <th>Reason</th>
+                    <th>Explanation</th>
+                    <th>Start date</th>
+                    <th>End date</th>
+                    <th>Total days</th>
+                    <th>Status</th>
+                    <th>Approval</th>
+                </tr>
+
+                <% leaves.forEach(function(leave){ %>
+                    <% if (leave.status == "pending") { %>
+                    <tr>
+                        <td style="text-transform: capitalize;"><%= leave.name %></td>
+                        <td><%= leave.position %></td>
+                        <td style="text-transform: capitalize;"><%= leave.department %></td>
+                        <td><%= moment(leave.submit_time).format('DD/MM/YYYY') %></td>
+                        <td><%= leave.reason %></td>
+                        <td style="text-transform: capitalize;"><%= leave.explanation %></td>
+                        <td><%= moment(leave.start_date).format('DD/MM/YYYY') %></td>
+                        <td><%= moment(leave.end_date).format('DD/MM/YYYY') %></td>
+                        <td><%= leave.total_days %></td>
+                        <td style="text-transform: capitalize;"><%= leave.status %></td>
+                        <td>
+                            <form action="/approve" method="post">
+                                <input type="hidden" value="<%= leave.id %>" name="id">
+                                <button type="submit" class="btn btn-success">Approve</button>
+                            </form>
+                            
+                            <form action="/decline" method="post">
+                                <input type="hidden" value="<%= leave.id %>" name="id">
+                                <button type="submit" class="btn btn-danger">Decline</button>
+                            </form>
+                        </td>
+                    </tr>
+                    <% } %>
+                <% }); %>
+            </table>
+        </div>
+    </div>
+</body>

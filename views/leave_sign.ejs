@@ -1,0 +1,57 @@
+<body>
+    <%- include("nav") %>
+
+    <div class="container">
+        <br>
+        <div class="container area">
+            <form action="/leave-submit" method="post">
+                <div class="form-group">
+                    <label>Name:</label>
+                    <input type="text" class="form-control" placeholder="Enter name" name="name">
+                </div>
+                <div class="form-group">
+                    <label><strong>Position:</strong></label>
+                    <select class="form-select form-control" aria-label="Default select example" name="pos">
+                        <option value="Staff" selected>Staff</option>
+                        <option value="Manager">Manager</option>
+                        <option value="Director">Director</option>
+                        <option value="HR">HR</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Department:</label>
+                    <input type="text" class="form-control" placeholder="Enter department" name="department">
+                </div>
+                <div class="form-group">
+                    <label><strong>Reason for Leave:</strong></label>
+                    <select class="form-select form-control" aria-label="Default select example" name="reason">
+                        <option value="Annual" selected>Annual Leave</option>
+                        <option value="Sick">Sick Leave</option>
+                        <option value="Half-Day Annual">Half Day Annual Leave</option>
+                        <option value="Permitted Late/Early">Permitted Late/Early Dismissal</option>
+                        <option value="Maternity/Paternity">Maternity/Paternity Leave</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Explanation:</label>
+                    <textarea class="form-control" name="explanation">Enter additional explanations</textarea>
+                </div>
+                <div class="form-group">
+                    <label>Start date:</label>
+                    <input type="date" class="form-control" name="start_date">
+                </div>
+                <div class="form-group">
+                    <label>End date:</label>
+                    <input type="date" class="form-control" name="end_date">
+                </div>
+                <div class="form-group">
+                    <label>Total days:</label>
+                    <input type="number" class="form-control" placeholder="Input number of days absent" name="total">
+                </div>
+
+                <button class="btn btn-primary" type="submit">Submit</button>
+                <a href="leave"><button class="btn btn-default">Cancel</button></a>
+            </form>
+        </div>
+    </div>
+</body>

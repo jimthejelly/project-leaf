@@ -1,0 +1,53 @@
+<body>
+    <%- include("nav") %>
+
+    <div class="container">
+        <br>
+
+        <div>
+            <a href="emp-form"><button class="btn btn-primary">New Employee</button></a>
+        </div>
+
+        <br>
+
+        <div>
+            <table class="table table-striped">
+                <tr>
+                    <th>Name</th>
+                    <th>Birthday</th>
+                    <th>Email</th>
+                    <th>Phone number</th>
+                    <th>Position</th>
+                    <th>Picture</th>
+                </tr>
+
+                <% employees.forEach(function(employee){ %>
+                    <tr>
+                        <td style="text-transform: capitalize;"><%= employee.name %></td>
+                        <td><%= moment(employee.dob).format('DD/MM/YYYY') %></td>
+                        <td><%= employee.email %></td>
+                        <td><%= employee.phone %></td>
+                        <td><%= employee.position %></td>
+                        <td><img src="<%= employee.pfp %>" width="50" height="50"></td>
+                    </tr>
+                <% }); %>
+            </table>
+        </div>
+    </div>
+</body>
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    var urlParams = new URLSearchParams(window.location.search);
+
+    if(urlParams.has('success') && urlParams.get('success')) {
+        new swal({
+        title: "Success",
+        text: "New employee created", 
+        icon: "success",
+        button: "Okay",
+        }).then(() => {
+            location.href = '/employee';
+        })
+    }
+</script>

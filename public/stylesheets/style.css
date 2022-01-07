@@ -1,0 +1,49 @@
+body {
+  font-family: Helvetica, sans-serif;
+  background-color: aliceblue;
+}
+
+nav {
+  font-family: "Monaco", Verdana, Helvetica;
+}
+
+h3 {
+  font-family: "Monaco", Verdana, Helvetica;
+  color: #3A506B;
+}
+
+table {
+  text-align: left;
+  font-size: medium;
+}
+
+.dashboard {
+  text-align: right;
+  color: #3A506B;
+}
+
+.box {
+  border-color: #3A506B;;
+  border-radius: 7%;
+  padding: 20px;
+  height: 175px;
+}
+
+.board {
+  background-color: #FFFFFF;
+}
+
+.area {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #FFFFFF;
+}
+
+table {
+  background-color: #FFFFFF;
+}
+
+.welcome {
+  padding: 50px;
+  color: #3A506B;
+}
